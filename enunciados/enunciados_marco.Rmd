@@ -1,6 +1,8 @@
 ---
-title: "Trabajo Marco: enunciados"
-output: html_document
+title: 'Trabajo Marco: enunciados'
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ## Problema 1
@@ -16,7 +18,7 @@ n_alternativas <- 5
 tabla1 <- crea.tablaX(rexp(n_states*n_alternativas), 
                     numalternativas = n_alternativas,
                     numestados = n_states)
-knitr::kable(tabla1)
+knitr::kable(tabla1, digits = 4)
 ```
 
 
