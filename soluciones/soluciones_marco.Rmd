@@ -119,5 +119,5 @@ table <- crea.tablaX(table_per_lines,
 dibuja.criterio.Hurwicz_Intervalos(tablaX = table)
 criterio.Todos(table, alfa = 0.5)
 ```
-La mejor opción para el agricultor es cultivar cebollas de acuerdo con todos los criterios de decision considerados, excepto por el criterio optimista y el criterio de Hurwicz con grado de optimismo mayor que 0.617. Si el agricultor es bastante optimista que las condiciones climaticas van a ser buenas entonces eligirà de cultivar tomate.
+La mejor opción para el agricultor es cultivar cebollas de acuerdo con todos los criterios de decision considerados, excepto por el criterio optimista y el criterio de Hurwicz con grado de optimismo mayor que 0.617. Si el agricultor es bastante optimista que las condiciones climaticas van a ser buenas entonces eligirà de cultivar tomate por el criterio de Hurwicz y el criterio optimista. 
 
