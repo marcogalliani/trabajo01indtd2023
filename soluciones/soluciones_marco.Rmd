@@ -26,8 +26,8 @@ tabla1 <- crea.tablaX(rexp(n_states*n_alternativas),
 knitr::kable(tabla1, digits = 4)
 ```
 
-### Solucion
-```{r}
+### Soluciones
+```{r, echo=FALSE}
 computing_crit_results <- function(tablaX, favorable, alfa){
   crit_results <- list()
   crit_results[["Wald"]] <- criterio.Wald(tablaX = tablaX, favorable = favorable)
@@ -40,9 +40,9 @@ computing_crit_results <- function(tablaX, favorable, alfa){
 }
 ```
 
-#### Beneficios
+#### Solución en caso favorable:
 
-```{r echo=TRUE}
+```{r}
 ES_FAVORABLE <- TRUE
 results <- computing_crit_results(tablaX = tabla1,
                                   favorable = ES_FAVORABLE,
@@ -58,7 +58,9 @@ table_sol <- as.data.frame(table_sol)
 
 knitr::kable(table_sol)
 ```
-#### Costes
+**CONCLUSIÓN**: La alternativa optima por todo los criterios es 2, excepto por el criterio de Savage que elige la alternativa 4. El criterio de Savage trata de minimizar el arrepentimiento. Si somos interesados a minimizar el arrepentimiento eligiremos la alternativa 4.
+
+#### Solución en caso desfavorable:
 ```{r}
 ES_FAVORABLE <- FALSE
 results <- computing_crit_results(tablaX = tabla1,
@@ -75,7 +77,11 @@ table_sol <- as.data.frame(table_sol)
 
 knitr::kable(table_sol)
 ```
-
+**CONCLUSIÓN**: La alternativa optima es la 3 por todos los criterio, excepto por el criterio optimista.
+```{r}
+dibuja.criterio.Hurwicz_Intervalos(tabla1, favorable = F)
+```
+Para un alfa mayor que $0.986$ el criterio de Hurwicz tambien elige la alternativa 5. El grado de optimismo para eligir la alternativa es muy alto
 
 ## Problema 2
 ### Enunciado
